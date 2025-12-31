@@ -1,256 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cristel June T. Cambarijan | Creative Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristel June T. Cambarijan | Creative Portfolio</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            background: linear-gradient(120deg, #6b8cff, #f6a6d8);
-            color: #2e2e2e;
-            overflow-x: hidden;
-        }
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #6b8cff, #f6a6d8);
+    color: #2e2e2e;
+    overflow-x: hidden;
+}
 
-        /* HERO / FIRST LANE */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-        }
+/* FLOATING ORBS */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    z-index: -1;
+    animation: float 12s infinite ease-in-out;
+}
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top, rgba(255,255,255,0.35), transparent 60%);
-        }
+.orb.one {
+    width: 300px;
+    height: 300px;
+    background: #9db4ff;
+    top: 10%;
+    left: 5%;
+}
 
-        .hero-content {
-            position: relative;
-            max-width: 800px;
-            animation: fadeUp 1.5s ease;
-        }
+.orb.two {
+    width: 350px;
+    height: 350px;
+    background: #ffb6dd;
+    bottom: 10%;
+    right: 5%;
+    animation-delay: 4s;
+}
 
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
 
-        .hero h1 span {
-            color: #ffe1f3;
-        }
+.hero-content {
+    max-width: 850px;
+    animation: fadeUp 1.5s ease;
+}
 
-        .hero p {
-            margin-top: 15px;
-            font-size: 1.2rem;
-            color: #f5f5ff;
-        }
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    color: #ffffff;
+}
 
-        .hero-tagline {
-            margin-top: 25px;
-            padding: 12px 25px;
-            background: rgba(255,255,255,0.25);
-            border-radius: 30px;
-            display: inline-block;
-            font-size: 0.95rem;
-            color: #ffffff;
-            backdrop-filter: blur(8px);
-        }
+.hero h1 span {
+    background: linear-gradient(90deg, #ffe1f3, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        /* SECTIONS */
-        .section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 20px;
-        }
+.hero p {
+    margin-top: 18px;
+    font-size: 1.2rem;
+    color: #f5f5ff;
+}
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #3d3d9e;
-            margin-bottom: 30px;
-            text-align: center;
-        }
+.hero-tagline {
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 40px;
+    display: inline-block;
+    font-size: 0.95rem;
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
 
-        /* GLASS CARDS */
-        .glass {
-            background: rgba(255,255,255,0.88);
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            backdrop-filter: blur(10px);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
+/* SECTION */
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 20px;
+    position: relative;
+}
 
-        .glass:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-        }
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    color: #3d3d9e;
+    margin-bottom: 40px;
+    text-align: center;
+}
 
-        .glass p {
-            line-height: 1.8;
-            font-size: 1rem;
-        }
+/* GLASS CARD */
+.glass {
+    background: rgba(255,255,255,0.9);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    backdrop-filter: blur(12px);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
 
-        /* DETAILS GRID */
-        .details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
+.glass:hover {
+    transform: translateY(-12px) scale(1.01);
+    box-shadow: 0 45px 80px rgba(0,0,0,0.2);
+}
 
-        .detail-box {
-            background: linear-gradient(135deg, #eef1ff, #fde6f3);
-            padding: 18px;
-            border-radius: 15px;
-            font-size: 0.95rem;
-        }
+.glass p {
+    line-height: 1.9;
+    font-size: 1.05rem;
+}
 
-        .detail-box strong {
-            color: #5555cc;
-        }
+/* DETAILS */
+.details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
 
-        /* SKILLS LIST */
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
+.detail-box {
+    background: linear-gradient(135deg, #eef1ff, #fde6f3);
+    padding: 22px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
 
-        .skill {
-            background: #f7f8ff;
-            padding: 15px 18px;
-            border-radius: 14px;
-            font-size: 0.95rem;
-            position: relative;
-        }
+.detail-box:hover {
+    transform: translateY(-6px);
+}
 
-        .skill::before {
-            content: "✦";
-            position: absolute;
-            left: 12px;
-            color: #ff7ccf;
-        }
+.detail-box strong {
+    color: #5a5ad6;
+}
 
-        .skill span {
-            margin-left: 15px;
-        }
+/* SKILLS */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #ffffff;
-            font-size: 0.9rem;
-            background: rgba(0,0,0,0.1);
-        }
+.skill {
+    background: rgba(255,255,255,0.9);
+    padding: 18px 22px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease;
+}
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.skill:hover {
+    transform: translateY(-6px);
+}
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-        }
-    </style>
+.skill::before {
+    content: "✦";
+    position: absolute;
+    left: 18px;
+    color: #ff7ccf;
+}
+
+.skill span {
+    margin-left: 22px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.15);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-40px); }
+    100% { transform: translateY(0px); }
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- FIRST LANE / HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Hello, I’m <span>Cristel June</span></h1>
-            <p>Computer Science Student | Aspiring Computer Scientist  | Lifelong Learner</p>
-            <div class="hero-tagline">
-                Building skills today for the technology of tomorrow
-            </div>
-        </div>
-    </section>
+<div class="orb one"></div>
+<div class="orb two"></div>
 
-    <!-- ABOUT -->
-    <section class="section">
-        <h2 class="section-title">About Me</h2>
-        <div class="glass">
-            <p>
-                I am Cristel June T. Cambarijan, a 19-year-old Bachelor of Science in
-                Computer Science student at Sultan Kudarat State University.
-                I am actively developing my foundation in computing concepts,
-                programming principles, and web technologies. I value clarity,
-                creativity, and discipline in both academic and practical work,
-                striving to grow as a competent and responsible future professional
-                in the field of technology.
-            </p>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hello, I’m <span>Cristel June</span></h1>
+        <p>Computer Science Student | Aspiring Computer Scientist | Lifelong Learner</p>
+        <div class="hero-tagline">
+            Building skills today for the technology of tomorrow
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- PERSONAL DETAILS -->
-    <section class="section">
-        <h2 class="section-title">Personal Details</h2>
-        <div class="details">
-            <div class="detail-box"><strong>Full Name:</strong> Cristel June T. Cambarijan</div>
-            <div class="detail-box"><strong>Age:</strong> 19 years old</div>
-            <div class="detail-box"><strong>Program:</strong> Bachelor of Science in Computer Science</div>
-            <div class="detail-box"><strong>Institution:</strong> Sultan Kudarat State University</div>
-            <div class="detail-box"><strong>Email:</strong> cristeljunecambarijan@sksu.edu.ph</div>
-            <div class="detail-box"><strong>Location:</strong> Philippines, ISK</div>
-        </div>
-    </section>
+<!-- ABOUT -->
+<section class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="glass">
+        <p>
+            I am Cristel June T. Cambarijan, a 19-year-old Bachelor of Science in
+            Computer Science student at Sultan Kudarat State University. I am actively
+            developing my foundation in computing concepts, programming principles,
+            and web technologies while balancing creativity and discipline in both
+            academic and practical work.
+        </p>
+    </div>
+</section>
 
-    <!-- SKILLS -->
-    <section class="section">
-        <h2 class="section-title">Core Skills</h2>
-        <div class="skills-list">
-            <div class="skill"><span>HTML & CSS Fundamentals</span></div>
-            <div class="skill"><span>Programming Logic & Problem Solving</span></div>
-            <div class="skill"><span>Academic Writing & Documentation</span></div>
-            <div class="skill"><span>Version Control using GitHub</span></div>
-            <div class="skill"><span>Time Management & Self-Learning</span></div>
-        </div>
-    </section>
+<!-- DETAILS -->
+<section class="section">
+    <h2 class="section-title">Personal Details</h2>
+    <div class="details">
+        <div class="detail-box"><strong>Full Name:</strong> Cristel June T. Cambarijan</div>
+        <div class="detail-box"><strong>Age:</strong> 19 years old</div>
+        <div class="detail-box"><strong>Program:</strong> BS Computer Science</div>
+        <div class="detail-box"><strong>Institution:</strong> Sultan Kudarat State University</div>
+        <div class="detail-box"><strong>Email:</strong> cristeljunecambarijan@sksu.edu.ph</div>
+        <div class="detail-box"><strong>Location:</strong> Philippines, ISK</div>
+    </div>
+</section>
 
-    <!-- GOALS -->
-    <section class="section">
-        <h2 class="section-title">Career Goals</h2>
-        <div class="glass">
-            <p>
-                My goal is to continuously enhance my technical expertise while
-                maintaining ethical standards and professionalism. I aspire to
-                contribute to innovative and meaningful projects, explore diverse
-                areas of computer science, and evolve into a dependable professional
-                capable of adapting to the rapidly changing technology landscape.
-            </p>
-        </div>
-    </section>
+<!-- SKILLS -->
+<section class="section">
+    <h2 class="section-title">Core Skills</h2>
+    <div class="skills-list">
+        <div class="skill"><span>HTML & CSS Fundamentals</span></div>
+        <div class="skill"><span>Programming Logic & Problem Solving</span></div>
+        <div class="skill"><span>Academic Writing & Documentation</span></div>
+        <div class="skill"><span>Version Control using GitHub</span></div>
+        <div class="skill"><span>Time Management & Self-Learning</span></div>
+    </div>
+</section>
 
-    <footer>
-        © 2025 Cristel June T. Cambarijan | Student Portfolio
-    </footer>
+<!-- GOALS -->
+<section class="section">
+    <h2 class="section-title">Career Goals</h2>
+    <div class="glass">
+        <p>
+            My goal is to continuously enhance my technical expertise while maintaining
+            ethical standards and professionalism. I aspire to contribute to innovative
+            and meaningful projects and grow into a dependable computer science
+            professional in an ever-evolving technology landscape.
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2025 Cristel June T. Cambarijan | Student Portfolio
+</footer>
 
 </body>
 </html>
-
